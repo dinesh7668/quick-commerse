@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZipBasket — Groceries in 10 Minutes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── PAGE LOADER ── -->
+  <div id="loader">
+    <div class="loader-logo">
+      <span class="loader-icon">⚡</span>
+      <span>ZipBasket</span>
+    </div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">⚡ ZipBasket</a>
+
+      <div class="nav-location">
+        <span class="loc-pin">📍</span>
+        <div>
+          <div class="loc-label">Deliver to</div>
+          <div class="loc-value">New Delhi, 110001</div>
+        </div>
+      </div>
+
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input id="searchInput" type="text" placeholder="Search for groceries, snacks…" autocomplete="off" />
+        <button class="search-clear" id="searchClear">✕</button>
+      </div>
+
+      <div class="nav-actions">
+        <button class="btn-login" id="loginBtn">Login</button>
+        <button class="btn-cart" id="cartBtn">
+          🛒 Cart <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">⚡ Delivery in 10 minutes</div>
+      <h1 class="hero-title">Fresh. Fast.<br /><em>Right Now.</em></h1>
+      <p class="hero-sub">Over 5,000 products delivered to your door before your next thought.</p>
+      <div class="hero-cta">
+        <a href="#products" class="btn-primary scroll-link">Shop Now →</a>
+        <a href="#categories" class="btn-ghost scroll-link">Browse Categories</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>10 min</strong><span>Avg. delivery</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>5,000+</strong><span>Products</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>4.9★</strong><span>Rated</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="floating-card fc1">🥑 Avocado<br/><small>₹49</small></div>
+      <div class="floating-card fc2">🍓 Strawberries<br/><small>₹89</small></div>
+      <div class="floating-card fc3">🥛 Full Cream Milk<br/><small>₹62</small></div>
+      <div class="hero-blob"></div>
+      <div class="hero-emoji e1">🛵</div>
+      <div class="hero-emoji e2">🧃</div>
+      <div class="hero-emoji e3">🥦</div>
+    </div>
+  </section>
+
+  <!-- ── CATEGORIES ── -->
+  <section id="categories" class="section">
+    <div class="container">
+      <h2 class="section-title">Shop by Category</h2>
+      <div class="categories-grid" id="categoriesGrid">
+        <button class="cat-card active" data-cat="all">
+          <span class="cat-icon">🛒</span>
+          <span>All</span>
+        </button>
+        <button class="cat-card" data-cat="fruits">
+          <span class="cat-icon">🍎</span>
+          <span>Fruits</span>
+        </button>
+        <button class="cat-card" data-cat="vegetables">
+          <span class="cat-icon">🥦</span>
+          <span>Vegetables</span>
+        </button>
+        <button class="cat-card" data-cat="dairy">
+          <span class="cat-icon">🥛</span>
+          <span>Dairy</span>
+        </button>
+        <button class="cat-card" data-cat="snacks">
+          <span class="cat-icon">🍿</span>
+          <span>Snacks</span>
+        </button>
+        <button class="cat-card" data-cat="beverages">
+          <span class="cat-icon">🧃</span>
+          <span>Beverages</span>
+        </button>
+        <button class="cat-card" data-cat="bakery">
+          <span class="cat-icon">🍞</span>
+          <span>Bakery</span>
+        </button>
+        <button class="cat-card" data-cat="personal">
+          <span class="cat-icon">🧴</span>
+          <span>Personal</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DEALS BANNER ── -->
+  <section id="deals" class="section">
+    <div class="container">
+      <div class="deals-row">
+        <div class="deal-card deal-green">
+          <div class="deal-info">
+            <div class="deal-tag">LIMITED TIME</div>
+            <h3>Flat ₹60 OFF</h3>
+            <p>On your first order above ₹299</p>
+            <button class="deal-btn" onclick="applyCode('FIRST60')">Use Code: FIRST60</button>
+          </div>
+          <div class="deal-art">🛵💨</div>
+        </div>
+        <div class="deal-card deal-yellow">
+          <div class="deal-info">
+            <div class="deal-tag">WEEKEND SPECIAL</div>
+            <h3>Buy 2 Get 1 FREE</h3>
+            <p>On all fresh fruits & vegetables</p>
+            <button class="deal-btn" onclick="applyCode('BOGO')">Use Code: BOGO</button>
+          </div>
+          <div class="deal-art">🍎🍊🍋</div>
+        </div>
+        <div class="deal-card deal-purple">
+          <div class="deal-info">
+            <div class="deal-tag">MEMBER PERK</div>
+            <h3>Free Delivery</h3>
+            <p>On all orders — No minimum!</p>
+            <button class="deal-btn" onclick="alert('Sign up to unlock!')">Get ZipPass</button>
+          </div>
+          <div class="deal-art">⚡🎁</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRODUCTS ── -->
+  <section id="products" class="section">
+    <div class="container">
+      <div class="products-header">
+        <h2 class="section-title" id="productsTitle">All Products</h2>
+        <div class="sort-wrap">
+          <select id="sortSelect">
+            <option value="default">Sort: Featured</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+            <option value="name">Name A → Z</option>
+          </select>
+        </div>
+      </div>
+      <div id="noResults" class="no-results hidden">
+        <div class="no-results-icon">🔍</div>
+        <h3>No products found</h3>
+        <p>Try a different search or category</p>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ── WHY US ── -->
+  <section id="why" class="section">
+    <div class="container">
+      <h2 class="section-title center">Why ZipBasket?</h2>
+      <div class="why-grid">
+        <div class="why-card fade-in">
+          <div class="why-icon">⚡</div>
+          <h3>10-Min Delivery</h3>
+          <p>Our dark stores are strategically placed so your groceries arrive before you finish brewing tea.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">✅</div>
+          <h3>Quality Assured</h3>
+          <p>Every product hand-picked and quality-checked. We accept returns with zero questions asked.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">💸</div>
+          <h3>Best Prices</h3>
+          <p>We match MRP or beat it. Plus daily deals and exclusive app-only discounts every single day.</p>
+        </div>
+        <div class="why-card fade-in">
+          <div class="why-icon">🌱</div>
+          <h3>Farm Fresh</h3>
+          <p>Direct from farms to our warehouses in under 24 hours. Fresher than your neighbourhood market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">⚡ ZipBasket</div>
+          <p>Groceries delivered in 10 minutes. Available across 30+ cities in India.</p>
+          <div class="footer-socials">
+            <a href="#">𝕏</a><a href="#">📘</a><a href="#">📸</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <a href="#">FAQs</a>
+          <a href="#">Track Order</a>
+          <a href="#">Returns</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ZipBasket Technologies Pvt. Ltd.</span>
+        <span>Made with ❤️ in India</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── CART DRAWER ── -->
+  <div id="cartOverlay" class="cart-overlay hidden"></div>
+  <aside id="cartDrawer" class="cart-drawer">
+    <div class="cart-header">
+      <h2>Your Cart 🛒</h2>
+      <button id="closeCart">✕</button>
+    </div>
+    <div class="cart-delivery-tag">⚡ Estimated delivery: <strong>10 minutes</strong></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-empty hidden" id="cartEmpty">
+      <div class="cart-empty-icon">🛒</div>
+      <p>Your cart is empty</p>
+      <button class="btn-primary" onclick="closeCartDrawer()">Start Shopping</button>
+    </div>
+    <div id="cartFooter" class="cart-footer hidden">
+      <div class="cart-coupon">
+        <input type="text" id="couponInput" placeholder="Enter coupon code" />
+        <button id="applyCouponBtn">Apply</button>
+      </div>
+      <div id="discountLine" class="cart-discount hidden">
+        <span>Discount</span><span id="discountAmt" class="discount-green">-₹0</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Subtotal</span><span id="cartSubtotal">₹0</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Delivery Fee</span><span class="free-tag">FREE</span>
+      </div>
+      <div class="cart-total-row total-final">
+        <span>Total</span><span id="cartTotal">₹0</span>
+      </div>
+      <button class="btn-checkout" id="checkoutBtn">Proceed to Checkout →</button>
+    </div>
+  </aside>
+
+  <!-- ── LOGIN MODAL ── -->
+  <div id="loginModal" class="modal-overlay hidden">
+    <div class="modal">
+      <button class="modal-close" id="closeLogin">✕</button>
+      <div class="modal-logo">⚡ ZipBasket</div>
+      <h2>Welcome back!</h2>
+      <p class="modal-sub">Login to track orders, earn rewards & more.</p>
+      <input type="text" placeholder="📱 Enter mobile number" class="modal-input" maxlength="10" />
+      <button class="btn-primary full-width" onclick="alert('OTP sent! (demo)')">Send OTP</button>
+      <div class="modal-divider">or</div>
+      <button class="btn-google">🔍 Continue with Google</button>
+    </div>
+  </div>
+
+  <!-- ── TOAST ── -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
